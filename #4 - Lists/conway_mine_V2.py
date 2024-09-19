@@ -1,4 +1,3 @@
-#I didn't end this version yet
 import time, random, copy , sys
 
 nextCell = [] # every inner list is 'x' and every element in the inner list is 'y'
