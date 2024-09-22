@@ -1,4 +1,3 @@
-#I didn't finish this game
 grid = [['.', '.', '.', '.', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['O', 'O', 'O', 'O', '.', '.'],
@@ -8,7 +7,9 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['O', 'O', 'O', 'O', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
-while True:
-    y = len(grid) - 1
-    for x in range(len(grid)):
-      print(grid[x][y] , end="")
+width = len(grid) - 1
+height = len(grid[width])
+for y in range(height):
+  for x in range(width):
+    print(grid[x][y],end="")
+  print()
