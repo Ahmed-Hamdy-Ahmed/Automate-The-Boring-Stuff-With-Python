@@ -48,7 +48,7 @@ def isValidChessBoard(chessBoard):
   else:
     return False
 
-valid_chess_board_1 = validCessBoard = {
+valid_chess_board_1 ={
     '1a': 'bRook', '1b': 'bKnight', '1c': 'bBishop', '1d': 'bQueen',
     '1e': 'bKing', '1f': 'bBishop', '1g': 'bKnight', '1h': 'bRook',
     
