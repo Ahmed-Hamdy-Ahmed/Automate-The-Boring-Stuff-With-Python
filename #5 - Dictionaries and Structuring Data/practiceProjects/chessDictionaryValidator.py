@@ -26,36 +26,51 @@ def isValidChessBoard(chessBoard):
     'wRook': 2, 'wBishop': 2, 'wKnight': 2, 'wQueen': 1, 'wKing': 1, 'wPawn': 8
   }
   for k, v in chessBoard.items():
-    checkChessBoard.setdefault(v , 0)
-    checkChessBoard[v] += 1
+    if v != '':
+      checkChessBoard.setdefault(v , 0)
+      checkChessBoard[v] += 1
   #I made this to see if the dictionary was working
   print(checkChessBoard)
   for k, v in checkChessBoard.items():
     if checkChessBoard[k] != validCessBoardNum[k]:
-      return False
+      return "The number of " + k + " is wrong in line 34" #False
   chessBoardkeys = True
   chessBoardValues = True
   pieces = 0
   for k,v in chessBoard.items():
-    if k not in validCessBoard.keys():
-      chessBoardkeys = False
-    if v not in validCessBoard.values():
-      chessBoardValues = False
-    pieces += 1
+    if v:
+      if k not in validCessBoard.keys():
+        chessBoardkeys = False
+        print("chessBoardkeys is not in validCessBoard.keys() if statement in line 41")
+      if v not in validCessBoard.values():
+        chessBoardValues = False
+        print("chessBoardValues is not in validCessBoard.values() if statement in line 44")
+      pieces += 1
+  print(pieces)
   if chessBoardValues and chessBoardkeys and pieces == 32:
-    return True
+    return "The Board is valid the for loop in line 40" #True
   else:
-    return False
+    return "The Board is not valid the for loop in line 40" #False
 
-valid_chess_board_1 = {
+valid_chess_board_1 = validCessBoard = {
     '1a': 'bRook', '1b': 'bKnight', '1c': 'bBishop', '1d': 'bQueen',
     '1e': 'bKing', '1f': 'bBishop', '1g': 'bKnight', '1h': 'bRook',
+    
     '2a': 'bPawn', '2b': 'bPawn', '2c': 'bPawn', '2d': 'bPawn',
     '2e': 'bPawn', '2f': 'bPawn', '2g': 'bPawn', '2h': 'bPawn',
+    
+    '3a': '', '3b': '', '3c': '', '3d': '', '3e': '', '3f': '', '3g': '', '3h': '',
+    '4a': '', '4b': '', '4c': '', '4d': '', '4e': '', '4f': '', '4g': '', '4h': '',
+    
+    '5a': '', '5b': '', '5c': '', '5d': '', '5e': '', '5f': '', '5g': '', '5h': '',
+    '6a': '', '6b': '', '6c': '', '6d': '', '6e': '', '6f': '', '6g': '', '6h': '',
+    
     '7a': 'wPawn', '7b': 'wPawn', '7c': 'wPawn', '7d': 'wPawn',
     '7e': 'wPawn', '7f': 'wPawn', '7g': 'wPawn', '7h': 'wPawn',
+    
     '8a': 'wRook', '8b': 'wKnight', '8c': 'wBishop', '8d': 'wQueen',
-    '8e': 'wKing', '8f': 'wBishop', '8g': 'wKnight', '8h': 'bRook'
-}
+    '8e': 'wKing', '8f': 'wBishop', '8g': 'wKnight', '8h': 'wRook',
+  }
+
 
 print(isValidChessBoard(valid_chess_board_1))
