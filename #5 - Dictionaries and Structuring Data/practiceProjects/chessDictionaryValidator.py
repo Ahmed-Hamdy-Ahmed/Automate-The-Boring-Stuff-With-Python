@@ -29,11 +29,10 @@ def isValidChessBoard(chessBoard):
     if v != '':
       checkChessBoard.setdefault(v , 0)
       checkChessBoard[v] += 1
-  #I made this to see if the dictionary was working
-  print(checkChessBoard)
+
   for k, v in checkChessBoard.items():
     if checkChessBoard[k] != validCessBoardNum[k]:
-      return "The number of " + k + " is wrong in line 34" #False
+      return False
   chessBoardkeys = True
   chessBoardValues = True
   pieces = 0
@@ -41,16 +40,13 @@ def isValidChessBoard(chessBoard):
     if v:
       if k not in validCessBoard.keys():
         chessBoardkeys = False
-        print("chessBoardkeys is not in validCessBoard.keys() if statement in line 41")
       if v not in validCessBoard.values():
         chessBoardValues = False
-        print("chessBoardValues is not in validCessBoard.values() if statement in line 44")
       pieces += 1
-  print(pieces)
   if chessBoardValues and chessBoardkeys and pieces == 32:
-    return "The Board is valid the for loop in line 40" #True
+    return True
   else:
-    return "The Board is not valid the for loop in line 40" #False
+    return False
 
 valid_chess_board_1 = validCessBoard = {
     '1a': 'bRook', '1b': 'bKnight', '1c': 'bBishop', '1d': 'bQueen',
