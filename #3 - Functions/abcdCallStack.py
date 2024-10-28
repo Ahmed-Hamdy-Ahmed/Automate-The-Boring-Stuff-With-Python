@@ -1,7 +1,7 @@
 #this code was made to understand the frame object of the call stack
 #I made this line to understand the code better
 from PIL import Image
-img = Image.open("abcdCallStack.png")
+img = Image.open(r"#3 - Functions\abcdCallStack.png")
 
 
 def a():
