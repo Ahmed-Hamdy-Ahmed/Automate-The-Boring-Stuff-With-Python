@@ -17,7 +17,7 @@ for x in range(WIDTH):
 while True: # Main program loop.
     print('\n\n\n\n\n') # Separate each step with newlines.
     currentCells = copy.deepcopy(nextCells)
-
+    
     # Print currentCells on the screen:
     for y in range(HEIGHT):
         for x in range(WIDTH):

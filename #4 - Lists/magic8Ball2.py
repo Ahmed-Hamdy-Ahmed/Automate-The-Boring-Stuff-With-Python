@@ -10,4 +10,6 @@ messages = ['It is certain',
     'Outlook not so good',
     'Very doubtful']
 
+# if you removed the "-1" it may return index error
+#because the 2nd number in randint is included
 print(messages[random.randint(0, len(messages) - 1)])
